@@ -15,7 +15,7 @@ module.exports = function() {
 		});
 
 	// Load the models
-	// require('../app/models/student.server.model');
+	require('../app/models/userModel');
 	// require('../app/models/course.server.model');
 
 	// Return the Mongoose connection instance
