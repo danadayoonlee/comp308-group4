@@ -12,7 +12,7 @@ module.exports = function () {
 
 
   // Load the routing files
-  // app.use('/api/students', require('../app/routes/student.server.route.js'));
+  app.use('/api/user', require('../app/routes/userRoute'));
   // app.use('/api/courses', require('../app/routes/course.server.route.js'));
 
   return app
