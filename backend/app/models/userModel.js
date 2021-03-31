@@ -25,6 +25,14 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+  birth: {
+    type: Date,
+    required: true
+  },
+  gender: {
+    type: String,
+    required: true
+  },
   phone: {
     type: String,
     required: true
@@ -58,11 +66,11 @@ const vitalHistory = {
       type: Number,
       required: true
     },
-    updatedAt:{
+    updatedAt: {
       type: Date,
       required: true
     },
-    updatedBy:{
+    updatedBy: {
       type: Schema.Types.ObjectId,
       ref: 'Nurse'
     }
