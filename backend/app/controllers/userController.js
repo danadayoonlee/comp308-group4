@@ -41,7 +41,7 @@ exports.login = async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password)
     if (!isMatch) return res.status(400).json({ msg: "Incorrect password" })
 
-    //If login success, create access token
+    //If login success, create an access token
     const token = jwt.sign({ id: user._id }, jwtKey,
       { algorithm: 'HS256', expiresIn: jwtExpirySeconds });
 

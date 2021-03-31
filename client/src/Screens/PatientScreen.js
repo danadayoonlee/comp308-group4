@@ -1,6 +1,15 @@
-import Patient from '../components/Patient'
+import './PatientScreen.css'
+import { useState, useEffect } from 'react'
 
 function PatientScreen() {
+
+  const [isOpen, setIsOpen] = useState(false)
+
+  const onDoubleClickHandler = () => e => {
+    e.preventDefault()
+    setIsOpen(true)
+  }
+
   return (
     <>
       <div className="container">
@@ -17,12 +26,36 @@ function PatientScreen() {
             </tr>
           </thead>
           <tbody>
-            <Patient />
-            <Patient />
-            <Patient />
+            <tr className="cursor-pointer" onDoubleClick={onDoubleClickHandler()}>
+              <td>firstName</td>
+              <td>lastName</td>
+              <td>birth</td>
+              <td>gender</td>
+              <td>email</td>
+              <td>phone</td>
+            </tr>
           </tbody>
         </table>
       </div>
+
+
+      {isOpen ? (
+        <div className="modal-backdrop">
+          <div className="modal-content-wrapper">
+            <div className="modal-content">
+              <div className="modal-header">
+                <span>fullName</span>
+                <button onClick={() => setIsOpen(false)}>
+                  <i className="fas fa-times"></i>
+                </button>
+              </div>
+              <div className="modal-body">
+                Vital histories
+            </div>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </>
   )
 }

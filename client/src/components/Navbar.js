@@ -11,7 +11,7 @@ function Navbar() {
             <Link className="p-2 text-dark" to="/motivationaltips">Motivational Tips</Link>
             <Link className="p-2 text-dark" to="/emergencyalerts">
               Emergency Alerts
-              <span class="badge rounded-pill bg-danger text-white">3</span>
+              <span className="badge rounded-pill bg-danger text-white">3</span>
             </Link>
           </nav>
           <Link className="btn btn-outline-primary ml-2" to="/login">Log in</Link>

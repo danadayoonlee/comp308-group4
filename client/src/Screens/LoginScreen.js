@@ -1,9 +1,8 @@
+import LoginForm from '../components/LoginForm'
 
 function LoginScreen() {
   return (
-    <div className="container">
-      Login Screen
-    </div>
+    <LoginForm />
   )
 }
 
