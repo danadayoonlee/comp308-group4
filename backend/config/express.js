@@ -13,7 +13,8 @@ module.exports = function () {
 
   // Load the routing files
   app.use('/api/user', require('../app/routes/userRoute'));
-  // app.use('/api/courses', require('../app/routes/course.server.route.js'));
+  app.use('/api/nurse', require('../app/routes/nurseRoute.js'));
+  app.use('/api/patient', require('../app/routes/patientRoute.js'));
 
   return app
 }
