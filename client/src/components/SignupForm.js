@@ -60,6 +60,7 @@ function SignupForm(props) {
             <div className="form-group row">
               <label className="col-form-label col-4">Gender</label>
               <select className="form-control col-8" name="gender" value={user.gender} onChange={onChange} required>
+                <option key="" value="">Select Gender</option>
                 <option key="Female">Female</option>
                 <option key="Male">Male</option>
               </select>

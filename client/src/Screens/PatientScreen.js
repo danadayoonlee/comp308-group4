@@ -64,7 +64,7 @@ function PatientScreen() {
                 </button>
               </div>
               <div className="modal-body">
-                {selectedPatient.vitalHistories ? (
+                {selectedPatient.vitalHistories.length > 0 ? (
                   <table className="table table-hover">
                     <thead>
                       <tr>
