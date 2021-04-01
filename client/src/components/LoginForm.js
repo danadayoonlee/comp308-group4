@@ -3,8 +3,14 @@ import { useDispatch } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
 import axios from 'axios'
 
+
+// Actions
+import { getUser } from '../redux/actions/userActions'
+
 function LoginForm(props) {
   axios.defaults.withCredentials = true
+
+  const dispatch = useDispatch()
 
   const [loginInfo, setLoginInfo] = useState({ email: '', password: '' })
 
@@ -23,6 +29,7 @@ function LoginForm(props) {
 
     axios.post('api/user/login', user)
       .then(() => {
+        dispatch(getUser())
         props.history.push('/')
       } )
       .catch(err => {

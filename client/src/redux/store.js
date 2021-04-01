@@ -3,12 +3,12 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 // Reducers
-// import {
-//   getPatientReducer
-// } from './reducers/patientReducers'
+import {
+  getUserReducer
+} from './reducers/userReducers'
 
 const reducer = combineReducers({
-  // patient: getPatientReducer
+  user: getUserReducer
 })
 
 const middleware = [thunk]
