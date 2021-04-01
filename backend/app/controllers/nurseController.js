@@ -10,11 +10,3 @@ exports.getPatients = async(req, res) =>{
   }
 }
 
-exports.getNurse = async(req, res) => {
-  try {
-    const nurse = await Nurse.findOne(req.user.id).select("-password")
-    return res.status(200).json(nurse)
-  } catch (err) {
-    return res.status(500).json({ msg: err.message })
-  }
-}

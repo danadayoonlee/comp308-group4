@@ -62,3 +62,12 @@ exports.logout = async (req, res) => {
     return res.status(500).json({ msg: err.message })
   }
 }
+
+exports.getUserInfo = async(req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select("-password")
+    return res.status(200).json(user)
+  } catch (err) {
+    return res.status(500).json({ msg: err.message })
+  }
+}
