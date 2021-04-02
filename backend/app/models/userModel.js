@@ -59,8 +59,14 @@ const vitalHistory = {
       required: true
     },
     bloodPressure: {
-      type: Number,
-      required: true
+      systolic: {
+        type: Number,
+        required: true
+      },
+      diastolic: {
+        type: Number,
+        required: true
+      }
     },
     respiratoryRate: {
       type: Number,
