@@ -18,7 +18,7 @@ exports.register = async (req, res) => {
     const passwordHash = await bcrypt.hash(password, 10)
 
     var newUser = null
-    if(role === 1){
+    if(role === "1"){
       newUser = new Nurse({...req.body, password: passwordHash})
     } else{
       newUser = new Patient({...req.body, password: passwordHash})

@@ -7,7 +7,7 @@ function SignupForm(props) {
   axios.defaults.withCredentials = true
 
   const [user, setUser] = useState({
-    _id: '', email: '', password: '', firstName: '', lastName: '', phone: '', birth: '', gender: ''
+    _id: '', email: '', password: '', firstName: '', lastName: '', phone: '', birth: '', gender: '', role: ''
   })
 
   const onChange = (e) => {
@@ -63,6 +63,14 @@ function SignupForm(props) {
                 <option key="" value="">Select Gender</option>
                 <option key="Female">Female</option>
                 <option key="Male">Male</option>
+              </select>
+            </div>
+            <div className="form-group row">
+              <label className="col-form-label col-4">Role</label>
+              <select className="form-control col-8" name="role" value={user.role} onChange={onChange} required>
+                <option key="" value="">Select Role</option>
+                <option key="0" value={0}>Patient</option>
+                <option key="1" value={1}>Nurse</option>
               </select>
             </div>
           <div className="form-group row">
