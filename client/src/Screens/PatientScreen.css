@@ -9,6 +9,7 @@
 
 .modal-content-wrapper {
   min-width: 500px;
+  max-width: 80%;
   display: flex;
   flex-direction: column;
   width: fit-content;
@@ -41,3 +42,5 @@
 .modal-header button i {
   font-size: 1.6rem;
 }
+
+

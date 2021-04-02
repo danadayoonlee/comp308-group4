@@ -59,11 +59,11 @@ const vitalHistory = {
       required: true
     },
     bloodPressure: {
-      high:{
+      systolic: {
         type: Number,
         required: true
       },
-      low:{
+      diastolic: {
         type: Number,
         required: true
       }

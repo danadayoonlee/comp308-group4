@@ -68,15 +68,15 @@ function PatientScreen() {
                   <table className="table table-hover">
                     <thead>
                       <tr>
-                        <th className="align-middle" rowspan="2">Body Temperature</th>
-                        <th className="align-middle" rowspan="2">Heart Rate</th>
+                        <th className="align-middle" rowspan="2">Body Temperature (°C)</th>
+                        <th className="align-middle" rowspan="2">Heart Rate (BPM)</th>
                         <th className="align-middle" colspan="2">Blood Pressure</th>
-                        <th className="align-middle" rowspan="2">Respiratory Rate</th>
+                        <th className="align-middle" rowspan="2">Respiratory Rate (BPM)</th>
                         <th className="align-middle" rowspan="2">Update At</th>
                       </tr>
                       <tr>
-                        <th>High</th>
-                        <th>Low</th>
+                        <th>Systolic (mmHg)</th>
+                        <th>Diastolic (mmHg)</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -85,13 +85,21 @@ function PatientScreen() {
                           <tr key={index}>
                             <td>{record.bodyTemperature}</td>
                             <td>{record.heartRate}</td>
-                            <td>{record.bloodPressure.high}</td>
-                            <td>{record.bloodPressure.low}</td>
+                            <td>{record.bloodPressure.systolic}</td>
+                            <td>{record.bloodPressure.diastolic}</td>
                             <td>{record.respiratoryRate}</td>
                             <td>{record.updatedAt}</td>
                           </tr>
                         )
                       })}
+                      <tr key={-1}>
+                            <td><input className="form-control" /></td>
+                            <td><input className="form-control" /></td>
+                            <td><input className="form-control" /></td>
+                            <td><input className="form-control" /></td>
+                            <td><input className="form-control" /></td>
+                            <td><input className="form-control" /></td>
+                          </tr>
                     </tbody>
                   </table>
                 ) : (
