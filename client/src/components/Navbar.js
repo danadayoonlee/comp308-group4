@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link, withRouter } from 'react-router-dom'
-import axios from 'axios';
 
 // Actions
 import { getUser, logout } from '../redux/actions/userActions'
@@ -24,7 +23,7 @@ function Navbar(props) {
   return (
     <>
       <header className="d-flex flex-md-row justify-content-between align-items-center p-3 px-md-4 mb-3 bg-body border-bottom shadow-sm">
-        <Link className="h5 my-0 me-md-auto text-dark" to="/">Hospital</Link>
+        <Link className="h5 my-0 me-md-auto text-dark" to="/">Hospital{profile ? ' - ' + profile.firstName : ''}</Link>
         <div className="d-flex justify-content-between align-items-center">
           <nav className="my-2 my-md-0 me-md-3">
             {profile && profile.role === 1 ? (

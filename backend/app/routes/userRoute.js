@@ -10,5 +10,7 @@ router.get('/logout', user.logout)
 
 router.get('/userinfo', auth, user.getUserInfo)
 
+router.post('/newVitals', auth, user.newVitals)
+
 
 module.exports = router
