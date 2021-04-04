@@ -74,6 +74,7 @@ const vitalHistory = {
     },
     updatedAt: {
       type: Date,
+      default: Date.now(),
       required: true
     },
     updatedBy: {

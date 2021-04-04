@@ -71,3 +71,17 @@ exports.getUserInfo = async(req, res) => {
     return res.status(500).json({ msg: err.message })
   }
 }
+
+exports.newVitals = async(req, res) => {
+  try {
+    const {patientId, ...newVitals} = req.body
+
+    const patient = await Patient.findById(patientId)
+    patient.vitalHistories.push(newVitals)
+    patient.save()
+
+    return res.status(200).json(patient)
+  } catch (err) {
+    return res.status(500).json({ msg: err.message })
+  }
+}
