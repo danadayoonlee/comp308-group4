@@ -24,7 +24,7 @@ function PatientScreen() {
     axios.get('/api/nurse/patients')
       .then(res => setAllPatients([...res.data]))
       .catch(err => alert(err.response.data.msg))
-  }, [])
+  }, [selectedPatient])
 
   const onDoubleClickHandler = (patient) => e => {
     e.preventDefault()
