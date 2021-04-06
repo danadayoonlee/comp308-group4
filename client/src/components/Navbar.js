@@ -4,15 +4,18 @@ import { Link, withRouter } from 'react-router-dom'
 
 // Actions
 import { getUser, logout } from '../redux/actions/userActions'
+import { getAlerts } from '../redux/actions/alertActions'
 
 function Navbar(props) {
 
   const dispatch = useDispatch()
 
-  const profile = useSelector(state => state.user.profile)
+  const { profile } = useSelector(state => state.user)
+  const alerts = useSelector(state => state.alert.alerts)
 
   useEffect(() => {
     dispatch(getUser())
+    dispatch(getAlerts())
   }, [dispatch])
 
   const logoutHandler = () => {
@@ -41,7 +44,7 @@ function Navbar(props) {
             )}
             <Link className="p-2 text-dark" to="/emergencyalerts">
               Emergency Alerts
-                <span className="badge rounded-pill bg-danger text-white">3</span>
+              {profile && profile.role === 1 ? <span className="badge rounded-pill bg-danger text-white">{alerts && alerts.length}</span> : ''}
             </Link>
           </nav>
           {profile ? (

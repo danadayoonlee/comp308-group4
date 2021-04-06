@@ -11,6 +11,7 @@ const jwtKey = config.secretKey;
 exports.register = async (req, res) => {
   try {
     const { email, password, role } = req.body
+    if(password.length < 6) return res.status(400).json({ msg: "Password should be longer." })
     const user = await User.findOne({ email })
     if (user) return res.status(400).json({ msg: "The email already exists." })
 
@@ -91,7 +92,7 @@ exports.newMotivationalTips = async(req, res) => {
     const {patientEmail, ...newMotivationalTips} = req.body
     
     Patient.findOne({email: req.body.patientEmail}, (err, patient) => { 
-      if(patient.motivationalTips.length = 0) {
+      if(patient.motivationalTips.length === 0) {
         patient.motivationalTips.push(newMotivationalTips)
         patient.save()
         console.log(patient)
