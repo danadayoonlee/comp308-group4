@@ -6,6 +6,7 @@ import axios from 'axios'
 
 // Actions
 import { getUser } from '../redux/actions/userActions'
+import { getAlerts } from '../redux/actions/alertActions'
 
 function LoginForm(props) {
   axios.defaults.withCredentials = true
@@ -28,8 +29,10 @@ function LoginForm(props) {
     }
 
     axios.post('api/user/login', user)
-      .then(() => {
+      .then((res) => {
         dispatch(getUser())
+        dispatch(getAlerts())
+        
         props.history.push('/')
       } )
       .catch(err => {

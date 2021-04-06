@@ -16,6 +16,7 @@ module.exports = function() {
 
 	// Load the models
 	require('../app/models/userModel');
+	require('../app/models/alertModel');
 
 	// Return the Mongoose connection instance
 	return db;

@@ -11,11 +11,6 @@ const UserSchema = new Schema({
   },
   password: {
     type: String,
-    // Validate the 'password' value length
-    validate: [
-      (password) => password && password.length >= 6,
-      'Password should be longer'
-    ],
     required: true
   },
   firstName: {
@@ -80,7 +75,7 @@ const vitalHistory = {
     },
     updatedBy: {
       type: Schema.Types.ObjectId,
-      ref: 'Nurse'
+      ref: 'User'
     }
   }],
   motivationalTips: [{

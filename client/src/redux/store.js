@@ -6,9 +6,13 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import {
   getUserReducer
 } from './reducers/userReducers'
+import {
+  getAlertReducer
+} from './reducers/alertReducers'
 
 const reducer = combineReducers({
-  user: getUserReducer
+  user: getUserReducer,
+  alert: getAlertReducer
 })
 
 const middleware = [thunk]
