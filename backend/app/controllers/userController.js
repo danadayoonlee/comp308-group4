@@ -85,3 +85,26 @@ exports.newVitals = async(req, res) => {
     return res.status(500).json({ msg: err.message })
   }
 }
+
+exports.newMotivationalTips = async(req, res) => {
+  try {
+    const {patientEmail, ...newMotivationalTips} = req.body
+    
+    Patient.findOne({email: req.body.patientEmail}, (err, patient) => { 
+      if(patient.motivationalTips.length = 0) {
+        patient.motivationalTips.push(newMotivationalTips)
+        patient.save()
+        console.log(patient)
+      } else {
+        patient.motivationalTips.pop()
+        patient.motivationalTips.push(newMotivationalTips)
+        patient.save()
+        console.log(patient)
+      }
+
+      res.status(200).json(patient)
+    })
+  } catch (err) {
+    return res.status(500).json({ msg: err.message })
+  }
+}

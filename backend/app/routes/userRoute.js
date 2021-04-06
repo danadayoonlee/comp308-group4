@@ -12,5 +12,6 @@ router.get('/userinfo', auth, user.getUserInfo)
 
 router.post('/newVitals', auth, user.newVitals)
 
+router.post('/newMotivationalTips', auth, user.newMotivationalTips)
 
 module.exports = router

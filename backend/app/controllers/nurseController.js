@@ -9,4 +9,3 @@ exports.getPatients = async(req, res) =>{
     return res.status(500).json({ msg: err.message })
   }
 }
-

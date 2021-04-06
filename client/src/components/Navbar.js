@@ -29,15 +29,16 @@ function Navbar(props) {
             {profile && profile.role === 1 ? (
               <>
                 <Link className="p-2 text-dark" to="/patients">Patients</Link>
+                <Link className="p-2 text-dark" to="/createMotivationaltips">Motivational Tips</Link>
               </>
             ) : (
               <>
                 <Link className="p-2 text-dark" to="#">Daily Information</Link>
                 <Link className="p-2 text-dark" to="#">Medical Checklist</Link>
+                <Link className="p-2 text-dark" to="/getMotivationaltips">Motivational Tips</Link>
 
               </>
             )}
-            <Link className="p-2 text-dark" to="/motivationaltips">Motivational Tips</Link>
             <Link className="p-2 text-dark" to="/emergencyalerts">
               Emergency Alerts
                 <span className="badge rounded-pill bg-danger text-white">3</span>

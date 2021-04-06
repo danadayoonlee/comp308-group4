@@ -6,6 +6,7 @@ const UserSchema = new Schema({
     type: String,
     // Validate the email format
     match: [/.+\@.+\..+/, "Please fill a valid email address"],
+    unique: true,
     required: true
   },
   password: {
@@ -70,6 +71,22 @@ const vitalHistory = {
     },
     respiratoryRate: {
       type: Number,
+      required: true
+    },
+    updatedAt: {
+      type: Date,
+      default: Date.now(),
+      required: true
+    },
+    updatedBy: {
+      type: Schema.Types.ObjectId,
+      ref: 'Nurse'
+    }
+  }],
+  motivationalTips: [{
+    _id: false,
+    tip: {
+      type: String,
       required: true
     },
     updatedAt: {

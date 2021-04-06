@@ -5,6 +5,4 @@ const authNurse = require('../middleware/authNurse')
 
 router.get('/patients', auth, authNurse, nurse.getPatients)
 
-
-
 module.exports = router
