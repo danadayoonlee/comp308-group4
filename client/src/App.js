@@ -5,6 +5,7 @@ import HomeScreen from '../src/Screens/HomeScreen'
 import PatientScreen from '../src/Screens/PatientScreen'
 import CreateMotivationalTipsScreen from './Screens/CreateMotivationalTipsScreen'
 import GetMotivationalTipsScreen from './Screens/GetMotivationalTipsScreen'
+import DailyInfoScreen from './Screens/DailyInfoScreen'
 import EmergencyAlertsScreen from '../src/Screens/EmergencyAlertsScreen'
 import LoginScreen from '../src/Screens/LoginScreen'
 import SignupScreen from '../src/Screens/SignupScreen'
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' exact component={HomeScreen} />
         <Route path='/patients' exact component={PatientScreen} />
         <Route path='/createMotivationaltips' exact component={CreateMotivationalTipsScreen} />
+        <Route path='/dailyinfo' exact component={DailyInfoScreen} />
         <Route path='/getMotivationaltips' exact component={GetMotivationalTipsScreen} />
         <Route path='/emergencyalerts' exact component={EmergencyAlertsScreen} />
         <Route path='/login' exact component={LoginScreen} />

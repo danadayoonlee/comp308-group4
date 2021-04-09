@@ -36,7 +36,7 @@ function Navbar(props) {
               </>
             ) : (
               <>
-                <Link className="p-2 text-dark" to="#">Daily Information</Link>
+                <Link className="p-2 text-dark" to="/dailyinfo">Daily Information</Link>
                 <Link className="p-2 text-dark" to="#">Medical Checklist</Link>
                 <Link className="p-2 text-dark" to="/getMotivationaltips">Motivational Tips</Link>
 
