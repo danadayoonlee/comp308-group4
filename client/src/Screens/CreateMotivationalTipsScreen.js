@@ -19,6 +19,10 @@ function MotivationalTipsScreen(props) {
     axios.post('/api/user/newMotivationalTips', newRecord)
       .then(res => props.history.push(res.data), alert("Daily motivational tip is saved"))
       .catch(err => alert(err.response.data.msg))
+      setNewMotivationalTips(() => ({
+        patientEmail: '', 
+        tip: ''
+    }));
   };
   
   const handleInputChange = (e) => {
