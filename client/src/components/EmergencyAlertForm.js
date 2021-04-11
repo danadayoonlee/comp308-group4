@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import axios from 'axios'
 
 function EmergencyAlertForm() {
@@ -31,7 +31,7 @@ function EmergencyAlertForm() {
 
   return (
     <div className="container">
-      <h4>Emergency Alert Sender</h4>
+      <h2>Emergency Alert Sender</h2>
       <p>Your alert will automatically be sent to:</p>
       <ul>
         <li>Emergency Health Service</li>

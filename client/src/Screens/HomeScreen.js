@@ -2,7 +2,7 @@
 function HomeScreen() {
   return (
     <div className="container">
-      Home Screen
+      <h2>Welcome!</h2>
     </div>
   )
 }

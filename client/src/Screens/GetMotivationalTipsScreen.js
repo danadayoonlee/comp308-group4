@@ -9,11 +9,12 @@ function MotivationalTipsScreen() {
 
   return (
     <div className="container">
-      <h2>Motivational Tips</h2>
+      
       {profile ? (
         <>
           {profile.motivationalTips.length === 0 ? 'No Record' : (
             <Form className="register-form" method="get" action="http://youtu.be/c06dTj0v0sM" target="_blank">
+              <h2>Motivational Tips</h2>
               <Form.Group>
                 <Form.Label>Last updated at:</Form.Label>
                 <Form.Control
